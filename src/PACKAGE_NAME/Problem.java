@@ -1,22 +1,22 @@
 package PACKAGE_NAME;
-public class problem {
+public class Problem {
     private float rate  ;
     private String problemStatement  ;
     private int id ;
     private static int number_problem = 0  ;
-    public problem(float rate, String problemStatement) {
+    public Problem(float rate, String problemStatement) {
         this.rate = rate;
         this.problemStatement = problemStatement;
 
         this.id = ++number_problem ;
     }
 
-    public problem(String problemStatement) {
+    public Problem(String problemStatement) {
         this.problemStatement = problemStatement;
         this.id = ++number_problem ;
     }
 
-    public problem() {
+    public Problem() {
         rate  =  5.0f;
         problemStatement = null ;
         id = ++number_problem ;

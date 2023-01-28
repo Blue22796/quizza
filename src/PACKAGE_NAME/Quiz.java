@@ -5,12 +5,12 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Quiz {
-ArrayList<problem> currentQuiz ;
+ArrayList<Problem> currentQuiz ;
      JFrame jFrame =  new JFrame() ;
      JPanel jPanel =  new JPanel() ;
      GridLayout gridLayout  ;
      JLabel label =  new JLabel() ;
-    public Quiz(ArrayList<problem> current_Quiz) {
+    public Quiz(ArrayList<Problem> current_Quiz) {
         currentQuiz = current_Quiz;
         buildForm();
     }
