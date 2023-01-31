@@ -30,7 +30,7 @@ public class QuizGenerator {
 			
 			for(int j = 0; j<problems.size();j++) {
 				if(used[j]) continue;
-				float d = problems.get(j).rate-rate;
+				float d = problems.get(j).getRate()-rate;
 				d*=d;
 				if(d<dist) {
 					bm=j;
@@ -40,6 +40,7 @@ public class QuizGenerator {
 				
 			}
 			quiz.add(problems.get(bm));
+			used[bm]=true;
 		}
 		return quiz;
 		

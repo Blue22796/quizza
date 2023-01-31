@@ -30,7 +30,7 @@ public class PDBC {
 	public void insertProblem(Problem prob) throws SQLException {
 		Statement st = cnct.createStatement();
 		st.execute("insert into aaa.problem(rate,statement) values ("
-				+prob.rate+",'"+prob.statement+"')");
+				+prob.getRate()+",'"+prob.getProblemStatement()+"')");
 		}
 	
 	public ArrayList<Problem> getProblems(){

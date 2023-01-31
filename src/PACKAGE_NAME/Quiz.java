@@ -5,24 +5,28 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Quiz {
-ArrayList<Problem> currentQuiz ;
+	ArrayList<Problem> currentQuiz ;
      JFrame jFrame =  new JFrame() ;
      JPanel jPanel =  new JPanel() ;
-     GridLayout gridLayout  ;
+     GridLayout gridLayout;
      JLabel label =  new JLabel() ;
-    public Quiz(ArrayList<Problem> current_Quiz) {
+    
+     public Quiz(ArrayList<Problem> current_Quiz) {
         currentQuiz = current_Quiz;
         buildForm();
     }
-    private void buildForm(){
+    
+     private void buildForm(){
         jPanel.setBounds(0,0,1600, 500);
         gridLayout =  new GridLayout(currentQuiz.size() ,  1)  ;
         jPanel.setLayout(gridLayout);
+        
         for(int i =0 ; i < currentQuiz.size(); i++){
-            String Question =  currentQuiz.get(i).getProblemStatement() ;
-           label =  new JLabel("ahmed") ;
+           String Question =  currentQuiz.get(i).getProblemStatement() ;
+           label =  new JLabel(Question) ;
            jPanel.add(label);
         }
+        
         jFrame.add(jPanel) ;
         jFrame.setSize(1600,1000);
         jFrame.setLayout(null);
