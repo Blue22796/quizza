@@ -36,8 +36,6 @@ public class QuizGenerator {
 					bm=j;
 					dist=d;
 				}
-				
-				
 			}
 			quiz.add(problems.get(bm));
 			used[bm]=true;
