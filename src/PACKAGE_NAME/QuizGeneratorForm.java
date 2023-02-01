@@ -21,6 +21,7 @@ public class QuizGeneratorForm {
         buildForm();
     }
     private void buildForm(){
+    	panel = new JPanel(new GridLayout(5,0));
         panel.setBounds(0,0,1600, 500);
         MeanLabel =  new JLabel("mean") ;
         MeanField =  new JTextField();
@@ -63,7 +64,10 @@ public class QuizGeneratorForm {
             else {
                 quizGenerator =  new QuizGenerator(mean, sd , NumberOfQuestion) ;
                 ArrayList<Problem> quiz  =  quizGenerator.generateQuiz() ;
-                Quiz Q1 =  new Quiz(quiz) ;
+                JButton next = new JButton("Next");
+                next.setPreferredSize(new Dimension(200,50));
+                next.addActionListener(e->QuizGenerator());
+                Quiz Q1 =  new Quiz(quiz,next) ;
             }
 
         }
