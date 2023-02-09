@@ -4,10 +4,10 @@ import javax.swing.JFrame;
 
 public class Main {
     public static void main(String[] args) {
-    	QuizGeneratorForm psf = new QuizGeneratorForm();
+    	MainMenu mainMenu = new MainMenu()  ;
 		JFrame j = new JFrame();
 		j.setSize(600,450);
-		j.add(psf.panel);
+		j.add(mainMenu.MainMenuPanel);
 		j.setVisible(true);
     }
 }
