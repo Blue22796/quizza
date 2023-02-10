@@ -7,7 +7,7 @@ public class Main {
     	MainMenu mainMenu = new MainMenu()  ;
 		JFrame j = new JFrame();
 		j.setSize(600,450);
-		j.add(mainMenu.MainMenuPanel);
+		j.add(mainMenu.mainMenuPanel);
 		j.setVisible(true);
     }
 }

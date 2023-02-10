@@ -50,7 +50,6 @@ public class ProblemSubmissionForm {
 		c.gridy=0;
 		form.add(rateLabel,c);
 		
-		c.gridx=0;
 		c.gridy=1;
 		form.add(rateField,c);
 		
