@@ -28,7 +28,7 @@ public class MainMenu {
          menuLabel = new JLabel("QUIZZA",SwingConstants.CENTER);
          menuLabel.setPreferredSize(new Dimension(100,50));
          menuLabel.setFont(new Font("Serif", Font.PLAIN, 60));
-         menuLabel.setForeground(new Color(255,255,255));
+         menuLabel.setForeground(new Color(101, 18, 75));
  
          
          
@@ -58,7 +58,7 @@ public class MainMenu {
          mainMenuPanel.add(generationButton,c) ;
      }
      void OpenSubmissionForm(){
-         System.out.println("ahahaahahah");
+
      }
      void OpenQuizGenerator(){
 
