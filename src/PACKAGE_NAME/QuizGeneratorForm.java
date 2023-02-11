@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import static PACKAGE_NAME.Main.frame;
+
 public class QuizGeneratorForm {
     QuizGenerator quizGenerator ;
     JPanel panel = null ;
@@ -49,6 +51,7 @@ public class QuizGeneratorForm {
     }
     private void QuizGenerator() {
         try {
+
             float mean =  Float.parseFloat(MeanField.getText()) ;
             float sd =  Float.parseFloat(SD_Field.getText()) ;
            int  NumberOfQuestion = Integer.parseInt(NumberOfQuestionField.getText()) ;
@@ -74,6 +77,9 @@ public class QuizGeneratorForm {
         catch(NumberFormatException e) {
 		 ErorrMessage.print_message("please enter the data correct in the textField  ");
 
+        }
+        finally {
+            frame.remove();
         }
 
     }

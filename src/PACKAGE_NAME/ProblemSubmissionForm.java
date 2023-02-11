@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import static PACKAGE_NAME.Main.frame;
+
 public class ProblemSubmissionForm {
 	JPanel form = null;
 	Problem submission= new Problem();
@@ -71,6 +73,7 @@ public class ProblemSubmissionForm {
 		try {
 			//Retrieve and validate data, throw exception if invalid
 			//Submit otherwise
+			frame.remove();
 			submission.setRate(Float.parseFloat(rateField.getText()));
 			submission.setProblemStatement(problemStatement.getText());
 			if(submission.getRate()>=0&&submission.getRate()<=100)

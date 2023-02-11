@@ -9,6 +9,8 @@ import java.awt.Insets;
 
 import javax.swing.*;
 
+import static PACKAGE_NAME.Main.frame;
+
 public class MainMenu {
     JPanel mainMenuPanel ;
     JButton submissionButton  ;
@@ -58,11 +60,14 @@ public class MainMenu {
          mainMenuPanel.add(generationButton,c) ;
      }
      void OpenSubmissionForm(){
-         Main.add(new ProblemSubmissionForm().form);
+         System.out.println("hahahahahah");
+         frame.add(new ProblemSubmissionForm().form);
+        // Main.add(new ProblemSubmissionForm().form);
 
      }
      void OpenQuizGenerator(){
-    	 Main.add(new QuizGeneratorForm().panel);
+         frame.add(new QuizGeneratorForm().panel);
+    	 //Main.add(new QuizGeneratorForm().panel);
      }
 
 }

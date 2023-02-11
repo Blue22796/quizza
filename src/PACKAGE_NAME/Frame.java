@@ -11,16 +11,27 @@ public class Frame {
         jFrame.setSize(1600,1000);
         jFrame.setVisible(true);
     }
-    public void add (JPanel jPanel){
-       // jFrame.removeAll();
+    public  void add (JPanel jPanel){
+
+       if (stack.size()>0){
+           jFrame.remove(stack.peek());
+       }
+        jFrame.add(jPanel);
+        jFrame.validate();
+        jFrame.repaint();
+        jFrame.revalidate();
         stack.push(jPanel) ;
-        this.jFrame.add(jPanel) ;
-        this.jFrame.pack();
     }
     public  void remove (){
-        jFrame.removeAll();
-        stack.pop() ;
-        jFrame.add(stack.peek())  ;
+        if (stack.size()>0) {
+            jFrame.remove(stack.peek());
+            stack.pop() ;
+            jFrame.add(stack.peek())  ;
+            jFrame.validate();
+            jFrame.repaint();
+            jFrame.revalidate();
+        }
+
         jFrame.pack();
     }
 }
