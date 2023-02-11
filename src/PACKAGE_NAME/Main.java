@@ -1,7 +1,12 @@
 package PACKAGE_NAME;
 
+<<<<<<< HEAD
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+=======
+import javax.swing.*;
+import java.awt.*;
+>>>>>>> 17cb9a084c9eb8bfdd0b6fac4259544590cf3f11
 
 public class Main {
 	static JFrame j = new JFrame();
