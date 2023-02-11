@@ -58,10 +58,10 @@ public class MainMenu {
          mainMenuPanel.add(generationButton,c) ;
      }
      void OpenSubmissionForm(){
-         System.out.println("ahahaahahah");
+         Main.add(new ProblemSubmissionForm().form);
      }
      void OpenQuizGenerator(){
-
+    	 Main.add(new QuizGeneratorForm().panel);
      }
 
 }
