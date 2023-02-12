@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
 public class QuizGeneratorForm {
     QuizGenerator quizGenerator ;
     JPanel panel = null ;
@@ -16,6 +17,7 @@ public class QuizGeneratorForm {
     JLabel SDLabel  ;
     JLabel NumberOfQuestionLabel  ;
     JButton generate   ;
+    JButton back;
 
     public QuizGeneratorForm() {
         buildForm();
@@ -25,14 +27,17 @@ public class QuizGeneratorForm {
     	panel.setBackground(new Color(0,0,0));
         panel.setBounds(0,0,1600, 500);
         MeanLabel =  new JLabel("mean") ;
+    	MeanLabel.setForeground(new Color(150,150,200));
         MeanField =  new JTextField();
         MeanLabel.setBounds(10 ,  50  , 100   , 50 );
         MeanField.setBounds(140 ,  50  , 100   , 50 );
         SDLabel  =  new JLabel("standard deviation") ;
+    	SDLabel.setForeground(new Color(200,150,150));
         SD_Field =new JTextField() ;
         MeanLabel.setBounds(10  , 140  ,  100 ,  50);
         MeanLabel.setBounds(140  , 140  ,  100 ,  50);
         NumberOfQuestionLabel = new JLabel( " no.questions") ;
+        NumberOfQuestionLabel.setForeground(new Color(150,200,150));
         NumberOfQuestionField =  new JTextField()  ;
         NumberOfQuestionLabel.setBounds(10,  230  , 100 , 50);
         NumberOfQuestionField.setBounds(140  , 230   ,  100 ,  50 );
@@ -40,16 +45,21 @@ public class QuizGeneratorForm {
         generate.setFocusable(false);
         generate.setBounds(800 ,400,  100 ,  25);
         generate.addActionListener( e ->quizGenerate() );
+        back= new JButton("Back");
+        back.setBounds(800 ,400,  100 ,  25);
+        back.addActionListener(e->Frame.getInstance().clear());
         panel.add(MeanLabel) ;
         panel.add(MeanField) ;
         panel.add(SD_Field) ;
         panel.add(SDLabel) ;
         panel.add(NumberOfQuestionLabel) ;
         panel.add(NumberOfQuestionField);
+        panel.add(back);
         panel.add(generate) ;
     }
     private void quizGenerate() {
         try {
+
             float mean =  Float.parseFloat(MeanField.getText()) ;
             float sd =  Float.parseFloat(SD_Field.getText()) ;
            int  NumberOfQuestion = Integer.parseInt(NumberOfQuestionField.getText()) ;
@@ -75,9 +85,7 @@ public class QuizGeneratorForm {
         }
         catch(NumberFormatException e) {
 		 ErorrMessage.print_message("please enter the data correct in the textField  ");
-
         }
-
     }
 
 

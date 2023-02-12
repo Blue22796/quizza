@@ -71,6 +71,7 @@ public class ProblemSubmissionForm {
 		try {
 			//Retrieve and validate data, throw exception if invalid
 			//Submit otherwise
+			Frame.getInstance().remove();
 			submission.setRate(Float.parseFloat(rateField.getText()));
 			submission.setProblemStatement(problemStatement.getText());
 			if(submission.getRate()>=0&&submission.getRate()<=100)

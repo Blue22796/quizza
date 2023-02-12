@@ -1,16 +1,23 @@
 package PACKAGE_NAME;
 
+import java.awt.Button;
+
 import javax.swing.*;
 
 public interface ErorrMessage {
     public static void print_message(String message){
-        JFrame jFrame  =  new JFrame() ;
         JLabel MessageLabel  =  new JLabel(message) ;
+        JPanel prompt = new JPanel();
+        prompt.add(MessageLabel);
+        JButton b = new JButton();
+        b.setText("Back");
+        b.addActionListener(e->{
+        	Frame.getInstance().clear();
+        	Frame.getInstance().add(new QuizGeneratorForm().panel);
+        	});
+        prompt.add(b);
         MessageLabel.setBounds(200,  200,  250  ,  250);
-        jFrame.add(MessageLabel) ;
-        jFrame.setDefaultCloseOperation(jFrame.EXIT_ON_CLOSE);
-        jFrame.setSize(1600,1000);
-        jFrame.setLayout(null);
-        jFrame.setVisible(true);
+        Frame.getInstance().add(prompt);
+        
     }
 }

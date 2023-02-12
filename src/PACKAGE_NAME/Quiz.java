@@ -23,7 +23,8 @@ public class Quiz {
         gridLayout =  new GridBagLayout();
         GridBagConstraints c = new GridBagConstraints();
         c.fill=c.HORIZONTAL;
-        c.gridx=1; c.gridy=0;
+        c.gridwidth=2;
+        c.gridx=0; c.gridy=0;
         c.weightx=c.weighty=1;
         paper.setLayout(gridLayout);
         
@@ -35,8 +36,17 @@ public class Quiz {
         }
         c.fill=c.NONE;
         c.gridy++;
+        c.gridwidth=1;
+        c.gridx=1;
         paper.add(nextButton,c);
-    }
-
-
+        
+        JButton b = new JButton();
+        b.setText("Back");
+        b.addActionListener(e->{
+        	Frame.getInstance().clear();
+        	Frame.getInstance().add(new QuizGeneratorForm().panel);
+        	});
+        c.gridx=0;
+        paper.add(b,c);
+     }
 }

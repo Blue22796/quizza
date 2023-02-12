@@ -29,9 +29,16 @@ public class Frame {
         jFrame.repaint();
         jFrame.setVisible(true);
     }
-    public  void remove (){
+    public void remove (){
         jFrame.getContentPane().removeAll();
+        jFrame.repaint();
         stack.pop() ;
-        jFrame.add(stack.peek())  ;
+        jFrame.add(stack.peek());
     }
+    
+    public void clear() {
+    	stack.removeAllElements();
+    	add(new MainMenu().mainMenuPanel);
+    }
+    
 }
