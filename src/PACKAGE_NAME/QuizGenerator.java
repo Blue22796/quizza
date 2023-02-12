@@ -17,7 +17,7 @@ public class QuizGenerator {
 	}
 	
 	
-	public ArrayList<Problem> generateQuiz(){
+	public ArrayList<Problem> generateQuiz() throws ArrayIndexOutOfBoundsException{
 		ArrayList<Problem> quiz = new ArrayList<Problem>();
 		Boolean[] used = new Boolean[problems.size()];
 		for(int i = 0;i<used.length;i++)

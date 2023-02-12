@@ -74,12 +74,18 @@ public class QuizGeneratorForm {
             }
             else {
                 quizGenerator =  new QuizGenerator(mean, sd , NumberOfQuestion) ;
-                ArrayList<Problem> quiz  =  quizGenerator.generateQuiz() ;
-                JButton next = new JButton("Next");
-                next.setPreferredSize(new Dimension(200,50));
-                next.addActionListener(e->quizGenerate());
-                Quiz Q1 =  new Quiz(quiz,next) ;
-                Frame.getInstance().add(Q1.paper);
+                try {
+                	ArrayList<Problem> quiz  =  quizGenerator.generateQuiz() ;
+                	JButton next = new JButton("Next");
+                	next.setPreferredSize(new Dimension(200,50));
+                	next.addActionListener(e->quizGenerate());
+                	Quiz Q1 =  new Quiz(quiz,next) ;
+                	Frame.getInstance().add(Q1.paper);
+                }
+                catch(Exception e) {
+                	ErrorMessage.print_message("Too many problems X.x");
+                }
+               
             }
 
         }
