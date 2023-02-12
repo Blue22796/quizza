@@ -4,23 +4,34 @@ import javax.swing.*;
 import java.util.Stack;
 
 public class Frame {
-   public JFrame jFrame  ;
+	
+	private static Frame instance = null;
+	private JFrame jFrame;
     Stack <JPanel> stack =  new Stack<JPanel>() ;
-    Frame(){
+    
+    private Frame() {
         jFrame = new JFrame() ;
-        jFrame.setSize(1600,1000);
-        jFrame.setVisible(true);
+        jFrame.setSize(500,500);
     }
+    
+    public static Frame getInstance() {
+    	if(instance==null)
+    		instance = new Frame();
+		return instance;
+    	
+    }
+    
     public void add (JPanel jPanel){
        // jFrame.removeAll();
+    	jFrame.getContentPane().removeAll();
         stack.push(jPanel) ;
-        this.jFrame.add(jPanel) ;
-        this.jFrame.pack();
+        jFrame.add(jPanel) ;
+        jFrame.repaint();
+        jFrame.setVisible(true);
     }
     public  void remove (){
-        jFrame.removeAll();
+        jFrame.getContentPane().removeAll();
         stack.pop() ;
         jFrame.add(stack.peek())  ;
-        jFrame.pack();
     }
 }

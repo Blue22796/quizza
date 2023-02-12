@@ -22,6 +22,7 @@ public class QuizGeneratorForm {
     }
     private void buildForm(){
     	panel = new JPanel(new GridLayout(5,0));
+    	panel.setBackground(new Color(0,0,0));
         panel.setBounds(0,0,1600, 500);
         MeanLabel =  new JLabel("mean") ;
         MeanField =  new JTextField();
@@ -38,7 +39,7 @@ public class QuizGeneratorForm {
         generate =  new JButton("generate quiz" );
         generate.setFocusable(false);
         generate.setBounds(800 ,400,  100 ,  25);
-        generate.addActionListener( e ->QuizGenerator() );
+        generate.addActionListener( e ->quizGenerate() );
         panel.add(MeanLabel) ;
         panel.add(MeanField) ;
         panel.add(SD_Field) ;
@@ -47,7 +48,7 @@ public class QuizGeneratorForm {
         panel.add(NumberOfQuestionField);
         panel.add(generate) ;
     }
-    private void QuizGenerator() {
+    private void quizGenerate() {
         try {
             float mean =  Float.parseFloat(MeanField.getText()) ;
             float sd =  Float.parseFloat(SD_Field.getText()) ;
@@ -66,8 +67,9 @@ public class QuizGeneratorForm {
                 ArrayList<Problem> quiz  =  quizGenerator.generateQuiz() ;
                 JButton next = new JButton("Next");
                 next.setPreferredSize(new Dimension(200,50));
-                next.addActionListener(e->QuizGenerator());
+                next.addActionListener(e->quizGenerate());
                 Quiz Q1 =  new Quiz(quiz,next) ;
+                Frame.getInstance().add(Q1.paper);
             }
 
         }

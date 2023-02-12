@@ -58,11 +58,11 @@ public class MainMenu {
          mainMenuPanel.add(generationButton,c) ;
      }
      void OpenSubmissionForm(){
-         Main.add(new ProblemSubmissionForm().form);
+         Frame.getInstance().add(new ProblemSubmissionForm().form);
 
      }
      void OpenQuizGenerator(){
-    	 Main.add(new QuizGeneratorForm().panel);
+    	 Frame.getInstance().add(new QuizGeneratorForm().panel);
      }
 
 }
