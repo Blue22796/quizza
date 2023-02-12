@@ -16,7 +16,7 @@ public class PDBC {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			cnct = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3300/?user=root","root","zinji6mil");
+					"jdbc:mysql://sql7.freemysqlhosting.net:3306/?user=sql7597598","sql7597598","d4qUFWuFHs");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,14 +29,14 @@ public class PDBC {
 	
 	public void insertProblem(Problem prob) throws SQLException {
 		Statement st = cnct.createStatement();
-		st.execute("insert into aaa.problem(rate,statement) values ("
+		st.execute("insert into sql7597598.problem(rate,statement) values ("
 				+prob.getRate()+",'"+prob.getProblemStatement()+"')");
 		}
 	
 	public ArrayList<Problem> getProblems(){
 		ArrayList<Problem> probs= new ArrayList<Problem>();
 		try {
-			ResultSet rs = getInstance().cnct.createStatement().executeQuery("select statement,rate from aaa.problem");
+			ResultSet rs = getInstance().cnct.createStatement().executeQuery("select statement,rate from sql7597598.problem");
 			while(rs.next()) {
 				probs.add(new Problem(rs.getFloat("rate"),rs.getString("statement")));
 			}

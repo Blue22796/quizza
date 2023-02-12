@@ -4,7 +4,7 @@ import java.awt.Button;
 
 import javax.swing.*;
 
-public interface ErorrMessage {
+public interface ErrorMessage {
     public static void print_message(String message){
         JLabel MessageLabel  =  new JLabel(message) ;
         JPanel prompt = new JPanel();
@@ -13,7 +13,7 @@ public interface ErorrMessage {
         b.setText("Back");
         b.addActionListener(e->{
         	Frame.getInstance().clear();
-        	Frame.getInstance().add(new QuizGeneratorForm().panel);
+
         	});
         prompt.add(b);
         MessageLabel.setBounds(200,  200,  250  ,  250);

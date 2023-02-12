@@ -77,7 +77,7 @@ public class ProblemSubmissionForm {
 			if(submission.getRate()>=0&&submission.getRate()<=100)
 				PDBC.getInstance().insertProblem(submission);
 			else throw new Exception();
-			Frame.getInstance().remove();
+			Frame.getInstance().clear();
 		}
 		catch(SQLException e) {
 			//SQLException first to differentiate from invalid input
@@ -86,9 +86,8 @@ public class ProblemSubmissionForm {
 		catch(Exception e) {
 			/*To be added
 			Warn user if input is invalid*/
+			ErrorMessage.print_message("Invalid rate");
 		}
-		
-		
 	}
 	
 	

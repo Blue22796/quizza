@@ -64,13 +64,13 @@ public class QuizGeneratorForm {
             float sd =  Float.parseFloat(SD_Field.getText()) ;
            int  NumberOfQuestion = Integer.parseInt(NumberOfQuestionField.getText()) ;
             if(mean <1.0f  ||mean>100.0f   ){
-                ErorrMessage.print_message("you entered invalid mean");
+                ErrorMessage.print_message("you entered invalid mean");
             }
             else if ( sd <0 ||sd >Math.min(mean, 100.0-mean)) {
-               ErorrMessage.print_message("you entered invalid standard deviation");
+               ErrorMessage.print_message("you entered invalid standard deviation");
             }
             else if (NumberOfQuestion<0 ||NumberOfQuestion>150){
-                ErorrMessage.print_message("the number of question is too large or negative");
+                ErrorMessage.print_message("the number of question is too large or negative");
             }
             else {
                 quizGenerator =  new QuizGenerator(mean, sd , NumberOfQuestion) ;
@@ -84,7 +84,7 @@ public class QuizGeneratorForm {
 
         }
         catch(NumberFormatException e) {
-		 ErorrMessage.print_message("please enter the data correct in the textField  ");
+		 ErrorMessage.print_message("please enter the data correct in the textField  ");
         }
     }
 
