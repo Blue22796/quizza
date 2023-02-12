@@ -23,39 +23,82 @@ public class QuizGeneratorForm {
         buildForm();
     }
     private void buildForm(){
-    	panel = new JPanel(new GridLayout(5,0));
+
+        GridBagConstraints gbc =  new GridBagConstraints() ;
+    	panel = new JPanel();
+        panel.setLayout(new GridBagLayout());
     	panel.setBackground(new Color(0,0,0));
-        panel.setBounds(0,0,1600, 500);
         MeanLabel =  new JLabel("mean") ;
-    	MeanLabel.setForeground(new Color(150,150,200));
+    	MeanLabel.setForeground(new Color(255, 255, 255, 255));
+        MeanLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        MeanLabel.setHorizontalAlignment(JLabel.CENTER);
+
+        gbc.gridx =0 ;
+        gbc.gridy =0 ;
+        gbc.weightx =  1;
+        panel.add(MeanLabel,gbc);
+        gbc.insets =  new Insets(10,0,25,120 )  ;
+
+
+
         MeanField =  new JTextField();
-        MeanLabel.setBounds(10 ,  50  , 100   , 50 );
-        MeanField.setBounds(140 ,  50  , 100   , 50 );
+        gbc.gridx=  1 ;
+        gbc.gridy=  0 ;
+        gbc.weightx =1 ;
+        gbc.gridwidth= 1  ;
+        gbc.fill =  GridBagConstraints.HORIZONTAL ;
+        panel.add(MeanField,gbc) ;
+
         SDLabel  =  new JLabel("standard deviation") ;
-    	SDLabel.setForeground(new Color(200,150,150));
+
+        gbc.gridx= 0 ;
+        gbc.gridy =  1  ;
+    	SDLabel.setForeground(new Color(255, 255, 255));
+        SDLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        SDLabel.setHorizontalAlignment(JLabel.CENTER);
+        panel.add(SDLabel,gbc) ;
+
+
         SD_Field =new JTextField() ;
-        MeanLabel.setBounds(10  , 140  ,  100 ,  50);
-        MeanLabel.setBounds(140  , 140  ,  100 ,  50);
+
+        gbc.gridy =1 ;
+        gbc.gridx =  1  ;
+
+        panel.add(SD_Field,gbc) ;
+
+
+
         NumberOfQuestionLabel = new JLabel( " no.questions") ;
-        NumberOfQuestionLabel.setForeground(new Color(150,200,150));
+        NumberOfQuestionLabel.setForeground(new Color(255, 255, 255));
+        NumberOfQuestionLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        NumberOfQuestionLabel.setHorizontalAlignment(JLabel.CENTER);
+        gbc.gridx= 0 ;
+        gbc.gridy =  2  ;
+
+        panel.add(NumberOfQuestionLabel,gbc) ;
+
         NumberOfQuestionField =  new JTextField()  ;
-        NumberOfQuestionLabel.setBounds(10,  230  , 100 , 50);
-        NumberOfQuestionField.setBounds(140  , 230   ,  100 ,  50 );
+        gbc.gridx =  1  ;
+        gbc.gridy= 2  ;
+        panel.add(NumberOfQuestionField , gbc) ;
+
         generate =  new JButton("generate quiz" );
         generate.setFocusable(false);
-        generate.setBounds(800 ,400,  100 ,  25);
         generate.addActionListener( e ->quizGenerate() );
+        gbc.insets =  new Insets(100,30,70,50 )  ;
+        gbc.weightx= 0.1 ;
+
+        gbc.gridy  =3  ;
+        gbc.gridx   =  0 ;
+
+        panel.add(generate,gbc) ;
+        gbc.gridy =  3 ;
+        gbc.gridx =   1  ;
         back= new JButton("Back");
-        back.setBounds(800 ,400,  100 ,  25);
-        back.addActionListener(e->Frame.getInstance().clear());
-        panel.add(MeanLabel) ;
-        panel.add(MeanField) ;
-        panel.add(SD_Field) ;
-        panel.add(SDLabel) ;
-        panel.add(NumberOfQuestionLabel) ;
-        panel.add(NumberOfQuestionField);
-        panel.add(back);
-        panel.add(generate) ;
+        back.addActionListener(e->Frame.getInstance().clear()) ;
+        panel.add(back, gbc);
+
+
     }
     private void quizGenerate() {
         try {

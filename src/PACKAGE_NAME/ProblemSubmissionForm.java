@@ -1,9 +1,6 @@
 package PACKAGE_NAME;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.*;
 import java.sql.SQLException;
 
 import javax.swing.JButton;
@@ -26,13 +23,13 @@ public class ProblemSubmissionForm {
 		rateField = new JTextField();
 		rateField.setPreferredSize(new Dimension(330,25));
 		JLabel rateLabel = new JLabel("Rate");
-		rateLabel.setPreferredSize(new Dimension(80,20));
+		rateLabel.setFont(new Font("Arial" , 0 , 20));
 		rateLabel.setForeground(new Color(255,255,255));
 		
 		problemStatement= new JTextField();
 		problemStatement.setPreferredSize(new Dimension(330,25));
 		JLabel stmtLabel = new JLabel("Problem Statement");
-		stmtLabel.setPreferredSize(new Dimension(120,20));
+		stmtLabel.setFont(new Font("Arial" , 0 , 20));
 		stmtLabel.setForeground(new Color(255,255,255));
 		
 		
@@ -52,10 +49,10 @@ public class ProblemSubmissionForm {
 		
 		c.gridy=1;
 		form.add(rateField,c);
-		
+
 		c.gridy=2;
 		form.add(stmtLabel,c);
-		
+
 		c.gridy=3;
 		form.add(problemStatement,c);
 		
