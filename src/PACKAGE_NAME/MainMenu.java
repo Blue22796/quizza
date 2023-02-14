@@ -25,7 +25,7 @@ public class MainMenu {
          generationButton.setPreferredSize(new Dimension(100,50));   
          
 
-         menuLabel = new JLabel("QUIZ",SwingConstants.CENTER);
+         menuLabel = new JLabel("QUIZZA",SwingConstants.CENTER);
          menuLabel.setPreferredSize(new Dimension(100,50));
          menuLabel.setFont(new Font("Serif", Font.PLAIN, 60));
          menuLabel.setForeground(new Color(46, 156, 46, 255));
